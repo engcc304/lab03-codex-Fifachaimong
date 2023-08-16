@@ -15,7 +15,7 @@ int main () {
     i = 0 ;
     printf( "Enter name, quantity, and price for item %d [END 0 0] : ", i + 1 ) ;
     scanf( "%s %d %f", Name[i],  &Quantity[i], UnitPrice[i] ) ;
-    while( strcmp ( Name[i], "END" ) != 0) {
+    while( strcmp ( &Name[i], "END" ) != 0) {
         i++ ;
         printf( "Enter name, quantity, and price for item %d [END 0 0] : ", i + 1 ) ;
         scanf( "%s %d %f", Name[i], &Quantity[i], &UnitPrice[i] ) ;
@@ -26,15 +26,15 @@ int main () {
         TotalPrice[i] = Quantity[i]*UnitPrice[i] ;
         TotalAmount += TotalPrice[i] ;
     } //end for
-    printf("--------------------------------------------------------------\n");
-    printf("%-20s %11s %13s %17s\n",  "Name", "Quantity", "Unit Price", "Total Price");
-    printf("--------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n") ;
+    printf("%-20s %11s %13s %17s\n",  "Name", "Quantity", "Unit Price", "Total Price") ;
+    printf("--------------------------------------------------------------\n") ;
     for(i=0;i<NumberOfItems;i++) {
-        printf("%-20s %11d %13.2f %17.2f\n", Name[i], Quantity[i] , UnitPrice[i], TotalPrice[i]);
-        printf("--------------------------------------------------------------\n");
-        printf("%52s %11.2f\n", "TOTAL AMOUNT : ",TotalAmount);
-        printf("Enter customer name [QUIT to stop] : ");
-        scanf("%s",CustomerName) ;
+        printf("%-20s %11d %13.2f %17.2f\n", Name[i], Quantity[i], UnitPrice[i], TotalPrice[i] ) ;
+        printf("--------------------------------------------------------------\n") ;
+        printf("%52s %11.2f\n", "TOTAL AMOUNT : ", TotalAmount ) ;
+        printf("Enter customer name [QUIT to stop] : ") ;
+        scanf("%s", CustomerName ) ;
     } //end for
     return 0 ;
 } // end main function
